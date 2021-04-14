@@ -54,9 +54,10 @@ class Calculations {
     }
 
     subTreeMedian = () => {
+        if (this.root === null) return;
+        
         let arrTree = [];
         this.DFSPreOrder(value => arrTree.push(value));
-
         const mid = Math.floor(arrTree.length / 2);
         const nums = [...arrTree].sort((a, b) => a - b);
         if (arrTree.length % 2 !== 0) {
